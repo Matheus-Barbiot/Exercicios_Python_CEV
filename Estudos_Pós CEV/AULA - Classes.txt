@@ -1,0 +1,63 @@
+  CLASSES:
+	São uma espécie de "moldes" de objetos. Dentro desses objetos 		temos CARACTERISTICAS e FUNÇÕES para essas 			caracteristicas.
+=============================================================
+EXEMPLO SINTAX:
+	class Pessoa:
+		CARACTERISTICAS:
+			- nome
+			- idade
+		FUNÇÕES:
+			-alistamento
+-----------------------------------------------------------------------------------------------------------
+CARACTERISTICAS:
+	Sempre inicie uma classe com suas carcteristicas. 
+=============================================================
+SINTAX:
+	def __init__(self):
+		nome = ' '
+		idade = 0	
+=============================================================
+OBS:
+	init seria como se você discesse que ali estariam todas as variaveis 		e valores da classe.
+
+	o self faz referencia ao proprio nome do objeto que está sendo 		atribuido aqueles valores.
+=============================================================
+VARIAVEIS E VALORES:
+	Podemos definir caracteristicas como variaveis de uma classe, ou 		seja, teremos o nome da caracteristica e o valor. No exemplo, a 		variavel nome está sem valor, isso acontece por que a classe é um 		molde para outros objetos. ou seja podemos criar varias pessoas 		com caracteristicas diferentes.
+
+OBS:
+	Caracteriscticas sempre vão receber self antes de seu nome,
+	pois isso serve para especificar que é uma caracteristica da classe 		e não uma variavel qualquer.
+
+COMO ATRIBUIR VALORES:
+	Para atribuir valores nas variaveis da classe, temos que fazer a 		chamada da classe ter parâmetros onde colocamos os valores. 		Para fazer  isso, no init coloque os parametros que deseja que seja 		atribuido os valores.
+=============================================================
+EX:
+	class pessoa:
+		def __init__(self, nome, idade)
+			self.nome = nome
+			self.idade = idade
+
+OBS:
+	Como pode ver a carcteristica terá o seu valor o mesmo a ser 		atribuido no determinado paremetro.
+-----------------------------------------------------------------------------------------------------------
+FUNÇÔES:
+	São "Ações", que podemos fazer com as variaveis. podemos 			adicionar regras nelas. No exemplo, temos a função alistamento, só 		podemos nos alistar aos 18 anos. basta dizer que se a variavel idade 		for menor que 18 o objeto, ou melhor, a pessoa não pode se alistar.
+EX:
+	def alistar(self)
+		if self.idade < 18:
+			print ("não pode se alistar")
+		else:
+	'		print ("pode se alistar")
+==============================================================
+CONCLUSÃO:
+	Agora basta criar um obj que receba a classe e então chamar a 		função de alistamento.
+
+SINTAX:
+	p1 = Pessoa("matheus", 18)
+'	p1.alistar()
+
+RETURN:
+	pode se alistar.
+
+

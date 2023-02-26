@@ -1,0 +1,47 @@
+ITERATORS:
+	O conceito de interators é o de percorrer uma lista. Mostrar cada item 	de uma coleção um de cada vez de maneira interativa.
+
+-------------------------------------------------------------------------------------------------------------
+USANDO O FOR:
+	Um dos jeitos mais famosos de percorrer itens de uma lista é 		utilizando o for:
+
+		lista = [1, 2, 3, 4, 5]
+		for c in lista:
+			print(c)
+==============================================================
+Porém, não podemos usar isso de maneira interativa.
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
+USANDO "ITER( )" E "NEXT( )":
+	Este método de percorrer uma lista é melhor por poder ser utilizado 	de forma interativa:
+
+SINTAX:
+	LISTA_ = [1, 2, 3, 4, 5, 6]
+	itLISTA_ = iter(LISTA_)
+	print (next (itLISTA_) ) 	# 1
+==============================================================
+Na sintax, temos uma lista de números crescentes de 1 a 6 e abaixo temos uma variavel que chama a função iter( ) e transforma a lista interativa.
+Após isso temos um print () que usa a função next (), e por fim, no next como parâmetro temos itLISTA_.
+
+Aquele print irá escrever na tela o primeiro item da lista, neste caso "1". então, se colocarmos varios prints contendo a mesma coisa ele irá mostrar cada item um por um a cada print.
+==============================================================
+	print (next (itLISTA_) )	# 2
+	print (next (itLISTA_) )	# 3
+	print (next (itLISTA_) )	# 4
+	print (next (itLISTA_) )	# 5
+	print (next (itLISTA_) )	# 6
+	print (next (itLISTA_) )	# Type error: StopIteration
+==============================================================
+Como pode ver, se passarmos do limite de itens da lista, o programa dará um erro de parada de interação.
+
+sabendo disso podemos colocar esse print em um While, que dentro possui um try e um except com esse erro.
+==============================================================
+	while True:
+		try:
+			print (next (itLISTA_) )
+		except StopIteration:
+			break
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,150 @@
+-------------------------------------------------------------------------------------------------------------
+REGEX (EXPRESSÕES REGULARES):
+	É um mecanismo do mundo da programação para mecher com 		strings. Podemos fazer por exemplo, analize de dados, padronização, 		remover ou substrituir caracteres indesejados.
+
+-------------------------------------------------------------------------------------------------------------
+BIBILHOTECA:
+	No Python, para podemos usar expressões regulares, precisamos 		importar uma bibilhoteca chamada 're':
+
+	import re
+-------------------------------------------------------------------------------------------------------------
+FUNÇÕES DO REGEX:
+	Veja a seguir as principais funções de regex e como funcionam:
+-------------------------------------------------------------------------------------------------------------
+1 - MATCH:
+	Determina se o valor passado conbina com a frase.
+EX:
+	TEXT_ = 'Frase de teste, estudos de regex em python'
+	print (re.match ('Frase de teste', TEXT_)
+
+RETURN:
+	<_sre.SRE_Match object; span=(0, 14), match='Frase'>
+
+==============================================================
+
+Como pode ver no print temos a função match que tem como 		parametros o valor a ser comparado e a string que será comparado.
+No retorno podemos ver que span recebe de 0, 14 que são o número 		de caracteres que combinam com a frase.
+
+Caso o valor passado não combinar com a string o retorno seria None.
+
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
+2 - SEARCH:
+	Analisa a string e procura algum valor que combina com o valor 		passado na função.
+
+EX:
+	TEXT_ = 'Frase de teste, estudos de regex em python'
+	print (re.search ('regex', TEXT_)
+
+RETURN:
+	<_sre.SRE_Match object; span=(27, 32), match='regex'>
+
+==============================================================
+
+Como pode ver, a sintax do search é igual a do match. No retorno ele mostra no parametro spam, aonde o match começa e aonde termina.
+
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
+3 - FINDALL:
+	Procura na string valores que combinam com o valor passado na 		função e cria uma lista com esses valores
+
+EX:
+	TEXT_ = 'Frase de teste, estudos de regex no python, nome:matheus'
+	print ( re.findall ('no',  TEXT_))
+
+RETURN:
+	['no', 'no']
+
+==============================================================
+
+No retorno, todas as sequencias de N e O foram retiradas e adicionadas em uma lista, ignorando que o segundo "no" estava junto da palavra "nome"
+
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
+4 - FINDITER:
+	Serve para dar um search em todas os caracteres da string 		desejados, usando o conceito de iterators.
+
+EX:
+	TEXT_ = 'regex é bom, regex é legal'
+	RETURN_ = re.finditer('regex', TEXT_)
+
+	for r in RETURN_:
+    	print(r)
+
+
+RETURN:
+	<_sre.SRE_Match object; span=(0, 5), match='regex'>
+	<_sre.SRE_Match object; span=(13, 18), match='regex'>
+
+
+==============================================================
+Como pode ver, transformando os elementos desejados em iterators, temos o mesmo resultado do search
+
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
+5 - SUB:
+	Serve para substituir um elemento por outro em uma string.
+
+EX:
+	TEXT_ = 'regex é bom, regex é legal'
+	TEXT_2 = re.sub('regex', 'python', TEXT_)
+	print(TEXT_2)
+
+RETURN:
+	python é bom, python é legal
+
+==============================================================
+Por fim, criamos uma variavel nova que irá substituir o elemento "regex" da primeira string por "python".
+
+==============================================================
+-------------------------------------------------------------------------------------------------------------
+MÉTODOS DE CHECAGEM:
+
+.  -  Qualquer caractere.
+\.  -  Igual á um carctere de ponto.
+^    - Irá aceitar apenas o começo da string.
+[^]  - Irá aceitar todos, exceto os caracteres entre colchetes.
+
+\d   - Procura algarismos de 0 a 9.
+\D   - Procura tudo que NÃO é algarismo de 0 a 9.
+
+\s   - Procura qualquer caractere que seja vazio.
+\S   - procura qualquer caractere que não seja vazio.
+
+\w   - Procura qualquer caractere que seja alphanumerico
+\W  - Procura o contrário.
+-------------------------------------------------------------------------------------------------------------
+ESTRUTURAS:
+
+==============================================================
+[ ] CARACTER SET:
+
+[a-z]  -  Aceita qualquer caractere que esteja antes do traço até o que esteja depois.
+
+[A-Z]  -  A mesma coisa só que maiúsculo.
+
+[0-9]  -  A mesma coisa, só que com números.
+
+==============================================================
+DICA:
+Os Caracter Set procuram apenas um carctere:
+
+==============================================================
+QUANTIFICADORES:
+
++  -  Faz os Caractere set atenderem mais de um caractere.
+*   -  Mostra aonde não encontrou nada e onde encontrou o carctere especifico.
+?  -   Mostra nada ou cada um dos carctere encontrado.
+{N} - Mostra se o caractere apareceu N vezes.
+{A,B} - Mostra se o caractere aparece no minimo A vezes e no maximo B vezes.
+==============================================================
+( ) GRUPOS:
+são uma forma de mostrar o que vai e o que não vai aparecer em um padrão.
+
+|  -  funciona igual o "or".
+
+

@@ -1,0 +1,80 @@
+ARQUIVOS:
+	Arquivos txt em python são uma forma de poder guardar informações 	de texto em um arquivo txt sem que a informação seja destruída com 	o termino do programa. podemos também criar, e ditare excluir 	arquivos e seus componentes.
+
+==============================================================
+Para abrir um arquivo no python é preciso que o txt esteja na mesma pasta do arquivo py que vc está trabalhando.
+==============================================================
+OPEN ():
+	A função open() serve para abrirmos arquivos, ela recebe 2 			parametros:
+
+1 - O nome do arquivo.txt, sempre entre aspas e com .txt no final.
+2 - O modo que iremos trabalhar com este arquivo - ler ou escrever:
+	'w'  -  Escrever
+	'a'   -  Adicionar.
+ 	'r'    -  ler
+------------------------------------------------------------------------------------------------------------
+W - ESCRITA DE ARQUIVOS:
+	Como você já deve saber, para podermos escrever algo no arquivo 		temos que colocar no open (depois de ter especificado o nome do 		arquivo) o parâmetro 'w' entre aspas.
+
+==============================================================
+AVISO 1: Se o arquivo não existir, o transformador w cria um novo.
+AVISO 2: O metodo write sobescreve todo o arquivo, nada antigo será salvo.
+==============================================================
+
+arquivo.WRITE ( txt ):
+	Serve para podermos escrever algo no arquivo. que será usado na 		chamada da função, o txt será o que iremos adicionar ao arquivo.
+	O retorno da função será o número de caracteres que txt tem.
+
+------------------------------------------------------------------------------------------------------------
+A  - ADICIONAR TEXTO:
+	Como você deve saber o método W reescreve todo o arquivo, caso 		você queira apenas adcionar conteúdo ao arquivo, use o método A  		e a função write.
+
+==============================================================
+Porém, o conteudo adicionado será fundido com o conteúdo que teinha antes.
+EX:
+	'gatobola'
+No arquivo tinha 'gato'. No python, eu adcionei 'bola'.mas os dois ficaram juntos.
+==============================================================
+SEPARAR CONTEÙDO POR LINHA:
+	Para isso, o recomendado é sempre adicionar uma quebra de linha 		no final de todo conteúdo que você tiver no arquivo txt. No caso que 		um conteúdo adicional coloque sempre um "\n" para haver uma 		quebra de linha.
+EX:
+	arquivo = open('arquivos.txt', 'a')
+	print(arquivo.write('palavra\n'))
+------------------------------------------------------------------------------------------------------------
+L  -  LEITURA DE ARQUIVOS.
+	Como o nome do topico já diz, o transformador L é usado para ler 		arquivos txt existentes. digo existentes por que se abrirmos um 		arquivo inexistente o python dará erro.
+
+==============================================================
+arquivo.READ( ):
+	Serve para lermos todo o conteúdo do arquivo de texto. Se por 	exemplo adicionarmos um número como parâmetro, a função irá 	retornar os primeiros caracteres correspondentes á aquele número.
+==============================================================
+arquivo.READLINE( ):
+	Essa função, vai uma linha do texto para cada vez que for chamada.
+==============================================================
+arquivo.READLINES( ):
+	Transforma todas as linhas do arquivo em um conteúdo de lista.
+==============================================================
+ 
+------------------------------------------------------------------------------------------------------------
+FECHANDO ARQUIVOS:
+	Caso queria usar cada um dos transfomadores repetidamente é 	nessessario fechar os arquivos usando a função close ():
+
+EX:
+	arquivo = open('arquivos.txt', 'r')
+	print(arquivo.read())
+	arquivo.close()
+
+==============================================================
+Agora poderemos abrir o arquivo novamente usando outros transformadores.
+==============================================================
+Porém, caso você se esqueça de fechar o arquivo o python possui uma sintaxe especial para arquivos:
+
+with open ('arquivos.txt', 'r') as arquivo:
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

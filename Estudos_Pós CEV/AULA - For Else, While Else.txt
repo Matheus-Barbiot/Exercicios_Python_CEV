@@ -1,0 +1,13 @@
+FOR ELSE:
+	É uma sintax específica do for, onde o else funcionaria como:
+	Se o for não for interrompido isso acontece.
+
+SINTAX (SENDO INTERROMPIDO):
+	for N in range(0, 5):
+	            if N < 4:
+		break
+	else:
+	             print ('não foi interrompido')
+==============================================================
+Como pode ver o for vai ser interrompido de qualquer jeito, mas se o range fosse, por exemplo, 0 a 3 então o else seria rodado.
+==============================================================

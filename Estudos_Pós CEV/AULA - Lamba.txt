@@ -1,0 +1,74 @@
+FUNÇÕES LAMBDA:
+	Funções simples e anônimas, que nessecitam apenas de uma linha 		para serem criados, variaveis criadas em funções lambda, também 	são variaveis de escopo local.
+
+SYNTAX:
+     	VARIABLE   =    lanbda ARGUMENT: RETURN
+==============================================================
+EXPLICAÇÂO:
+-------------------------------------------------------------------------------------------------------------
+   VARIABLE;
+	Variavel que será assossiada como função, será usada na chamada 		da mesma.
+-------------------------------------------------------------------------------------------------------------
+   LAMBDA:
+	Define a variavel como função lambda.
+-------------------------------------------------------------------------------------------------------------
+   ARGUMENT:
+	Parametros da função.
+-------------------------------------------------------------------------------------------------------------
+   RETURN;
+	O que será retornado com o chamado da função.
+==============================================================
+LAMBDA SEM VARIAVEL:
+	Podemos também criar um função lambda que receba a propria 		syntax como chamada:
+
+ex:
+	print((lambda a,b: a+b)(2, 5))
+
+return:
+	7
+==============================================================
+EXPLICAÇÃO:
+	nos argumentos do print, temos dois parênteses:
+
+1 - função lambda que está dentro de parênteses, que funcionou como chamada de função.
+
+2 - parâmetros da função.
+==============================================================
+FUNÇÔES COMO ARGUMENTOS:
+	Podemos colocar funções como argumentos. incrivelmente, 	no 		parãmetro colocar uma função lambda.
+ ex;
+	VAR_ = lambda x, func: x + func(X)
+	print(VAR_(4, lambda x: x*x))
+
+RETURN;
+	20
+==============================================================
+FUNÇÔES LAMBDA COM MAP:
+	A função MAP(), funciona como um *argument em funções normais. 		Ele pega uma lista de informações e aplica a função para cada item 		da lista.
+
+
+SINTAX:
+	dobro = lambda v: v * 2
+	LISTA_ = [3, 5, 7]
+
+	CALC_ = list(map(dobro, LISTA_))
+	print(CALC_)
+
+RETURN:
+	[6, 10, 14]
+==============================================================
+EXPLICAÇÂO:
+-------------------------------------------------------------------------------------------------------------
+	1 - Criamos a função lambda "dobro()".
+-------------------------------------------------------------------------------------------------------------
+	2 - Criamos a lista de informações "LISTA_"
+-------------------------------------------------------------------------------------------------------------
+	3 - Criamos a lista CALC_ que dentro tem um map() que recebe a 		função primeiro e depois a lista de informações.
+-------------------------------------------------------------------------------------------------------------
+	4 - mandamos mostrar com o print.
+==============================================================
+
+
+
+
+

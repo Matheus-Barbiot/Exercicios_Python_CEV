@@ -1,0 +1,94 @@
+HERANÇA:
+	O conceito de herança no python é o conceito onde uma classe	(filho) herda os atributos e metodos de uma classe(pai), podendo 	fazer alterações  nos mesmos usando o metodo super().
+
+SINTAX:
+	class Pai:
+		atributos
+		metodos
+	class filho(Pai):
+		atributos da classe pai herdados
+		metodos da classe pai herdados
+		
+OBS:
+	Como pode ver, todos os recursos da classe PAI foram herdados pelo 	FILHO assim que eu coloquei a classe pai no parenteses da classe 		filho.
+
+-------------------------------------------------------------------------------------------------------------
+HERANÇA DE ATRIBUTOS / CARACTERISTICAS:
+	Herança de atributos é uma coisa que temos que específicar bem.
+
+EX:
+	classe pai:
+		def __init__(self, nome, idade):
+			self.nome_ = nome
+			self.idade_ = idade
+==============================================================
+como pode ver, a classe pai tem os atributos de nome e idade. Agora, para que a classe filho tenha estes mesmos atributos temos que especificar .
+==============================================================
+EX:
+	classe filho(pai):
+		def __init__(self, nome, idade):
+			pai.__init__(self, nome, idade)
+
+==============================================================
+no segundo init, estamos específicando que a propriedade nome de pai recebe o valor dado á propriedade nome de filho.
+==============================================================
+
+------------------------------------------------------------------------------------------------------------
+TRIBUTOS EXCLUSIVOS DA CLASSE FILHO:
+	A  maioria dos motivos da criação de uma classe filho é de poder ter 	atributos exclusivos sem que haja repetição de codigo.
+
+SINTAX:
+	class filho(pai):
+		def __init__(self, nome, idade, signo)
+			pai.__init__(nome, idade)
+			self.signo  = signo
+==============================================================
+como pode ver, a atribuição dos atributos pai ignora o atributo signo. pedido no primeiro init, pois aquele atributo é pedido apenas na classe filho.
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
+HERANÇA DE METODOS:
+	Diferente dos atributos, que precisam de uma atribuição um pouco 	"específica", os métodos ou funções já são implementados na classe 	filho assim que a classe pai foi colocada entre parenteses da classe 	filho.
+
+
+EX:
+	class pai:
+		def __init__(self, n, i)
+			self.nome = n
+			self.idade = i
+		def mostrar(self):
+			print(f'nome: {self.nome}')
+			print(f'idade: {self.idade}')
+==============================================================
+Função da classe pai foi criado agora vamos tentar usar na classe filho.
+==============================================================
+
+	p1 = filho('matheus', 'sagitário', 14)
+	p1.mostrar()	# funciona :)
+
+==============================================================
+como pode ver, eu criei o objeto p1 e atribui nome, signo, idade e usei a função mostrar da classe pai.
+
+O grande porém é que a função não mostra os atributos exclusivos da classe filho.
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
+FUNÇÂO SUPER():
+	Serve para re-escrever um método de uma superclasse dentro de 	uma subclasse
+
+EX:
+	def filho(pai):
+		def __init__(self, n, i, s)
+			pai.__init__(self, n, i)
+			self.signo = s
+==============================================================
+pode ver que a classe filho tem uma tributo que não será mostrado na função mostrar(), que é o atribito signo. Então, vamos usar a função super()  para reescrever afunção mostrar().
+==============================================================
+		def mostrar():
+			super().mostrar()
+			print(f'signo: {self.signo}')
+==============================================================
+pronto agora quando usarmos mostrar em obj da classe filho ele mostrará todos os atributos.
+==============================================================
+
+-------------------------------------------------------------------------------------------------------------
