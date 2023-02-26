@@ -1,7 +1,7 @@
 # Exercícios Python CEV:
 Todos os exercícios do Curso de python do Curso em Video ensinado pelo ótimo professor, Gustavo Guanabara.
 
-=================================================================================================
+============================================================================================
 
 Algumas das funções usadas na maioria dos exercícios podem ter um espaceamento entre chamado e parâmetros:
 
@@ -18,7 +18,7 @@ No meio do curso, quando eu ganhei um computador parei de fazer isso.
 Quando eu tiver tempo irei tentar corrigir, eu acho.
 
 
-=================================================================================================
+============================================================================================
 
 
 Podem ver também, os conteúdos que eu estudei após terminar o curso. são arquivos txt com algumas explicações, 
