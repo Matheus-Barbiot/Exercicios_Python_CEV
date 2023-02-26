@@ -1,0 +1,6 @@
+nome = str (input ('Digite seu nome inteiro: ')).strip()
+print ('Prazer em te conhecer!')
+ncap = nome.title()
+nplit = ncap.split()
+print (f'Seu primeiro nome é {nplit[0]}.')
+print (f'Seu ultimo nome é {nplit[-1]}. ')
