@@ -1,3 +1,3 @@
 #DESAFIO 001
 
-print ('Olá, Mundo!')
+print('Olá, Mundo!')

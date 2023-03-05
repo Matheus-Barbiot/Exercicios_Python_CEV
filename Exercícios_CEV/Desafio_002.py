@@ -1,5 +1,5 @@
 #DESAFIO 002
 
-nome = input ('Qual o seu nome?? ')
+nome = input('Qual o seu nome?? ')
 
-print ('Olá {}, muito prazer!!'.format (nome))
+print(f'Olá {nome}, muito prazer!!')
